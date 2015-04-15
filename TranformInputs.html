@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Transform Inputs</title>
+    <link type="text/css" rel="stylesheet" href="TransformInputs.css">
+</head>
+<body>
+
+
+    <button class="toggleshape">Toggle Shape</button>
+    <div class ="inputs animateCube">
+        <input type="text" class = "cube face1"/>
+        <input type="text" class = "cube face2"/>
+        <input type="text" class = "cube face3"/>
+        <input type="text" class = "cube face4"/>
+        <input type="text" class = "cube face5"/>
+        <input type="text" class = "cube face6"/>
+        <input type="text" class = "cube face1inner"/>
+        <input type="text" class = "cube face2inner"/>
+        <input type="text" class = "cube face3inner"/>
+        <input type="text" class = "cube face4inner"/>
+        <input type="text" class = "cube face5inner"/>
+        <input type="text" class = "cube face6inner"/>
+    </div>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function(){
+        var div = document.querySelector('div');
+        var toggleButton = document.querySelector('button');
+        toggleButton.addEventListener('click', function(){
+            div.classList.toggle('inputs');
+            div.classList.toggle('squares');
+            var inputs = document.querySelectorAll('input');
+            Array.prototype.forEach.call(inputs, function(x){
+                console.log(x.classList)
+                x.classList.toggle('cube');
+                x.classList.toggle('square');
+                console.log(x.classList)
+
+            });
+
+
+        });
+
+    });
+</script>
+
+
+</body>
+</html>

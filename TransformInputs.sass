@@ -1,0 +1,211 @@
+$color : aqua
+$fullHeight:100%
+$none:0
+$buttonMargin:10px
+$radius:25%
+$outerCube:200px
+$n90deg: -90deg
+$p90deg: 90deg
+$bigZ: 1000
+$persp: 2000px
+$top:50% 0%
+$bottom:100% 100%
+$right: 100% 50%
+$left: 0% 100%
+$innerCube:50% 50%
+$opac:0.4
+$innerOpac:1.6
+$sqtrans: 400px
+
+
+*
+  margin: $none
+  padding: $none
+
+html,body
+  height: $fullHeight
+  perspective: $persp
+  transform-style: preserve-3d
+/*div.container
+  background-color: $color
+  height: $fullHeight
+  width: $fullHeight
+
+button
+  border: 1px solid white
+  border-radius: $radius
+  padding: $buttonMargin
+  margin: $buttonMargin
+  color: white
+  line-height: 21px
+  font-size: 20px
+  background-color: lighten($color, 20)
+
+input.cube
+  margin: $none px
+  position: absolute
+  background-color: lighten($color, 40)
+  width: $outerCube
+  height: $outerCube
+  line-height: $outerCube/1.4
+  font-size: $outerCube/1.5
+  opacity: $opac
+  border: 1px solid black
+  backface-visibility: visible
+
+  //face2 =top
+input.cube.face2
+
+  transform-origin: $top
+  transform: rotateX($p90deg)
+  //z-index: 1000
+
+//face3 =bottom
+input.cube.face3
+  transform-origin: $bottom
+  transform: rotateX($n90deg)
+
+//right
+input.cube.face4
+  transform-origin: $right
+  transform: rotateY($p90deg)
+
+//left
+input.cube.face5
+  transform-origin: $left
+  transform: rotateY($n90deg)
+
+
+
+//back face
+input.cube.face1
+  z-index: $bigZ
+
+
+input.cube.face6
+  transform: translateZ($outerCube)
+
+//face2 =top
+input.cube.face2inner
+
+  transform-origin: $innerCube
+  transform: rotateX($p90deg) translateZ(50px) translateY(100px) scale(0.5)
+  opacity: $innerOpac
+//z-index: 1000
+
+//face3 =bottom
+input.cube.face3inner
+  transform-origin: $innerCube
+  transform: rotateX($n90deg) translateZ(50px) translateY(-100px) scale(0.5)
+  opacity: $innerOpac
+
+//right
+input.cube.face4inner
+  transform-origin: $innerCube
+  transform: rotateY($p90deg) translateX(-100px) translateZ(50px) scale(0.5)
+  opacity: $innerOpac
+
+//left
+input.cube.face5inner
+  transform-origin: $innerCube
+  transform: rotateY($n90deg) translateX(100px) translateZ(50px) scale(0.5)
+  opacity: $innerOpac
+
+
+
+//back face
+input.cube.face1inner
+
+  transform: translateZ(50px) scale(0.5)
+  opacity: $innerOpac
+
+
+input.cube.face6inner
+  transform: translateZ($outerCube/2+50px) scale(0.5)
+  opacity: $innerOpac
+
+
+div.inputs
+  width: $outerCube
+  height: $outerCube
+  position: relative
+  transform-origin: $innerCube $outerCube/2
+
+  transform-style: preserve-3d
+  top: $outerCube
+  left: $outerCube*2
+
+
+
+div.squares
+  width: $outerCube
+  height: $outerCube
+  transform-origin: $innerCube
+  transform-style: preserve-3d
+  top: $outerCube
+  left: $outerCube*2
+  position: relative
+
+
+
+input.square
+  margin: $none px
+  background-color: lighten($color, 40)
+  width: $outerCube
+  height: $outerCube
+  line-height: $outerCube/1.4
+  font-size: $outerCube/1.5
+  opacity: $opac
+  border: 1px solid black
+  position: absolute
+  backface-visibility: visible
+
+input.square.face1
+  transform: rotateY(0deg) translateZ($sqtrans)
+
+input.square.face2
+  transform: rotateY(30deg) translateZ($sqtrans)
+
+input.square.face3
+  transform: rotateY(60deg) translateZ($sqtrans)
+
+input.square.face4
+  transform: rotateY(90deg) translateZ($sqtrans)
+
+input.square.face5
+  transform: rotateY(120deg) translateZ($sqtrans)
+
+input.square.face6
+  transform: rotateY(150deg) translateZ($sqtrans)
+
+input.square.face1inner
+  transform: rotateY(180deg) translateZ($sqtrans)
+
+input.square.face2inner
+  transform: rotateY(210deg) translateZ($sqtrans)
+
+input.square.face3inner
+  transform: rotateY(240deg) translateZ($sqtrans)
+
+input.square.face4inner
+  transform: rotateY(270deg) translateZ($sqtrans)
+
+input.square.face5inner
+  transform: rotateY(300deg) translateZ($sqtrans)
+
+input.square.face6inner
+  transform: rotateY(330deg) translateZ($sqtrans)
+
+@keyframes kf
+  0%
+    transform: rotateY(0deg)
+  100%
+    transform: rotateY(360deg)
+
+div.animateCube
+  animation: kf 10000ms linear 1000
+  animation-fill-mode: forwards
+
+
+
+
